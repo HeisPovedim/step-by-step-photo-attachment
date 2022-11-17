@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Web site created using create-react-app">
+  <link rel="stylesheet" href="main.css">
+  <title>JS</title>
+</head>
+
+<body>
+  <div class="right-block">
+    <div class="mr_content-box " data-step_id="prikreplenie_foto" data-step_index="5">
+      <h2>Прикрепление фото</h2>
+      <form class="content-form" method="post" id="prikreplenie-foto">
+        <div class="alert alert-danger hidden"></div>
+        <div class="wrapper_content">
+          <input type="hidden" class="step-upload-image" value="3">
+          <!-- Блок ПЕРВОГО изображения паспорта -->
+          <div class="wrapper_content_passport step-upload hidden" id="passport-step-one" data-step_id="1">
+            <div class="wrapper_content_passport__img">
+              <img id="first_passport_img" src="/img/defPassport.00d012361a875d6dba1e.png" alt="pssport img">
+            </div>
+            <div class="wrapper_content_passport_info">
+              <h5 style="font-weight: bold; padding-bottom: 30px;">Загрузите изображеие паспорта РФ</h5>
+              <ul>
+                <li>Разворот должен попадать полностью на фото без обрезки углов, как на примере слева</li>
+                <li>Делать фото необходимо в хорошо освещенном месте, но без вспышки, так чтобы не было бликов
+                </li>
+                <li>Не закрывайте рукой данные в паспорте</li>
+                <li>Обязательно убедитесь, что на прикрепленном фото все записи хорошо читаются</li>
+              </ul><label for="first_passport_input">
+                <div class="wrapper_content_passport_info__buttons">
+                  <buttons class="btn btn-primary" style="display: flex; align-items: center; justify-content: center;"><span>Загрузить файл</span></buttons>
+                </div>
+              </label>
+              <input
+                type="file"
+                id="first_passport_input"
+                class="hidden"
+              >
+              </p>
+            </div>
+          </div>
+          <!-- Блок ВТОРОГО изображения паспорта -->
+          <div class="wrapper_content_passport step-upload hidden" id="passport-step-two" data-step_id="2">
+            <div class="wrapper_content_passport__img">
+              <img id="second_passport_img" src="/img/defPassportReg.ce7cdcae6e61b7a7787c.png" alt="pssport img" >
+            </div>
+            <div class="wrapper_content_passport_info">
+              <h5 style="font-weight: bold; padding-bottom: 30px;">Загрузите изображение разворота регистрации
+                паспорта</h5>
+              <ul>
+                <li>Разворот должен попадать полностью на фото без обрезки углов, как на примере слева</li>
+                <li>В
+                  случае если на странице регистрации нет серии и номера паспорта, то
+                  необходимо сфотографировать страницу регистрации вместе со следующей
+                  страницей</li>
+                <li>Делать фото необходимо в хорошо освещенном месте, но без вспышки, так чтобы не было бликов
+                </li>
+                <li>Не закрывайте рукой данные в паспорте</li>
+                <li>Обязательно убедитесь, что на прикрепленном фото все записи хорошо читаются</li>
+              </ul><label for="second_passport_input">
+                <div class="wrapper_content_passport_info__buttons">
+                  <buttons class="btn btn-primary" style="display: flex; align-items: center; justify-content: center;"><span>Загрузить файл</span></buttons>
+                </div>
+              </label>
+              <input
+                type="file"
+                id="second_passport_input"
+                class="hidden"
+                accept=".jpg, .jpeg, .png"
+              >
+            </div>
+          </div>
+          <!-- Блок карт -->
+          <div class="wrapper_content_card step-upload hidden" id="first-card-front" data-step_id="3">
+            <!-- 1 карта -->
+            <div class="first-card">
+              <div class="wrapper_content_card__img">
+                <img id="first-card-img" src="/img/cardDef.a787e36b92a6a52eb373.png" alt="card img">
+                <label for="first-card-input" class="label_class">
+                  <div class="wrapper_content_card__buttons">
+                    <buttons class="btn btn-primary" style="display: flex; align-items: center; justify-content: center;"><span>Загрузить файл</span></buttons>
+                  </div>
+                </label>
+                <input
+                  type="file"
+                  id="first-card-input"
+                  class="hidden"
+                >
+              </div>
+              <div class="wrapper_content_card_info">
+                <h5 style="font-weight: bold; padding-bottom: 30px;">Добавить фотографию банковской карты</h5>
+                <ul>
+                  <li>Сделайте фото лицевой стороны карты, которую Вы прикрепили</li>
+                  <li>Делать фото необходимо в хорошо освещенном месте, но без вспышки, так чтобы не было бликов
+                  </li>
+                  <li>Не закрывайте рукой данные на карте</li>
+                  <li>Обязательно убедитесь, что на прикрепленном фото номер и владелец карты хорошо читаются
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- карта нового образца -->
+            <div class="input-box" id="form_sb_use_cards" style="margin-bottom: 30px"">
+              <label id="check-box-label" class="control-label label-checkbox"><input id="sb_use_cards" type="checkbox" name="sb_use_cards" onClick={handlerSetCard}/> У Вас карта Тинькофф или Альфа банка нового образца?</label><br/>
+              <span style="font-size: 14px">Если Вы держатель карты Тинькофф или Альфа банк нового образца, где ФИО и номер карты расположены на разных сторонах, необходимо прикрепить 2 фотографии</span>
+            </div>
+            <!-- 2 карта -->
+            <div class="second-card hidden" id="card-new-sample">
+              <div class="wrapper_content_card__img">
+                <img id="second-card-img" src="/img/cardFrontTF.b120550d1a26f66bc5dd.png" alt="card img">
+                <label for="second-card-input" class="label_class">
+                <div class="wrapper_content_card__buttons">
+                  <buttons class="btn btn-primary"style="display: flex; align-items: center; justify-content: center;"><span>Загрузитьфайл</span></buttons>
+                </div>
+              </label>
+              <input
+                type="file"
+                id="second-card-input"
+                class="hidden"
+              >
+            </div>
+            <div class="wrapper_content_card_info">
+              <h5 style="font-weight: bold; padding-bottom: 30px;">Добавить фотографию лица банковской карты
+              </h5>
+              <ul>
+                <li>Сделайте фото лицевой стороны карты, которую Вы прикрепили</li>
+                <li>Делать фото необходимо в хорошо освещенном месте, но без вспышки, так чтобы не было бликов
+                </li>
+                <li>Не закрывайте рукой данные на карте</li>
+                <li>Обязательно убедитесь, что на прикрепленном фото номер и владелец карты хорошо читаются
+                </li>
+              </ul>
+            </div>
+            </div>
+            <!-- 3 карта -->
+            <div class="third-card hidden" id="card-new-sample">
+              <div class="wrapper_content_card__img">
+                <img id="third-card-img" src="/img/CardBackTF.8b9f61baf05de836a1d2.png" alt="card img">
+                <label for="third-card-input" class="label_class">
+                  <div class="wrapper_content_card__buttons">
+                    <buttons class="btn btn-primary"style="display: flex; align-items: center; justify-content: center;"><span>Загрузитьфайл</span></buttons>
+                  </div>
+                </label>
+                <input
+                  type="file"
+                  id="third-card-input"
+                  class="hidden"
+                >
+              </div>
+              <div class="wrapper_content_card_info">
+                <h5 style="font-weight: bold; padding-bottom: 30px;">Добавить фотографию оборота банковской
+                  карты</h5>
+                <ul>
+                  <li>Необходимо фото обратной стороны карты, которую вы прикрепили</li>
+                  <li>Делать фото необходимо в хорошо освещенном месте, но без вспышки, так чтобы не было бликов
+                  </li>
+                  <li>Закройте номер CVV так чтобы была видна остальная информация</li>
+                  <li>Обязательно убедитесь, что на прикрепленном фото номер и владелец карты хорошо читаются
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input class="hidden" name="formStatus">
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
