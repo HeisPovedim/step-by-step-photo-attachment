@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
   let allowedExtensions = /(.png|.jpg|.jpeg)$/i; // @: валидация
+  let data = new FormData()
 
   // ?: ВЫБОР ПРЕДЗАГРУЖАЕМОГО ШАГА
   function changeStep (step) {
@@ -52,6 +53,19 @@ window.addEventListener('load', function() {
       } else {
         img.onload = () => URL.revokeObjectURL(img.src);
         img.src = URL.createObjectURL(this.files[0]);
+        fetch('yourAPI', { // @: ваш POST
+          method: 'POST',
+          headers: {
+            "Content-Type": "First passport file"
+          },
+          body: img.src // @: наш файл
+        }).then (
+          response => response.json() // @: если ответ является объектом JSON
+        ).then (
+          success => console.log(success) // @: обработка объекта ответа на успешный процесс
+        ).catch (
+          error => console.log(error) // @: обработка объекта ответа на ошибку
+        );
         document.getElementById('passport-step-one').classList.add('hidden');
         document.getElementById('passport-step-two').classList.remove('hidden');
       }
@@ -69,7 +83,20 @@ window.addEventListener('load', function() {
         return false;
       } else {
         img.onload = () => URL.revokeObjectURL(img.src);
-        img.src = URL.createObjectURL(this.files[0]); 
+        img.src = URL.createObjectURL(this.files[0]);
+        fetch('yourAPI', { // @: ваш POST
+          method: 'POST',
+          headers: {
+            "Content-Type": "First passport file"
+          },
+          body: img.src // @: наш файл
+        }).then (
+          response => response.json() // @: если ответ является объектом JSON
+        ).then (
+          success => console.log(success) // @: обработка объекта ответа на успешный процесс
+        ).catch (
+          error => console.log(error) // @: обработка объекта ответа на ошибку
+        );
         document.getElementById('passport-step-two').classList.add('hidden');
         document.getElementById('first-card-front').classList.remove('hidden');
       }
@@ -87,7 +114,20 @@ window.addEventListener('load', function() {
         return false;
       } else {
         img.onload = () => URL.revokeObjectURL(img.src);
-        img.src = URL.createObjectURL(this.files[0]); 
+        img.src = URL.createObjectURL(this.files[0]);
+        fetch('yourAPI', { // @: ваш POST
+          method: 'POST',
+          headers: {
+            "Content-Type": "First passport file"
+          },
+          body: img.src // @: наш файл
+        }).then (
+          response => response.json() // @: если ответ является объектом JSON
+        ).then (
+          success => console.log(success) // @: обработка объекта ответа на успешный процесс
+        ).catch (
+          error => console.log(error) // @: обработка объекта ответа на ошибку
+        );
       }
     }
   });
@@ -103,12 +143,25 @@ window.addEventListener('load', function() {
         return false;
       } else {
         img.onload = () => URL.revokeObjectURL(img.src);
-        img.src = URL.createObjectURL(this.files[0]); 
+        img.src = URL.createObjectURL(this.files[0]);
+        fetch('yourAPI', { // @: ваш POST
+          method: 'POST',
+          headers: {
+            "Content-Type": "First passport file"
+          },
+          body: img.src // @: наш файл
+        }).then (
+          response => response.json() // @: если ответ является объектом JSON
+        ).then (
+          success => console.log(success) // @: обработка объекта ответа на успешный процесс
+        ).catch (
+          error => console.log(error) // @: обработка объекта ответа на ошибку
+        );
       }
     }
   });
 
-  // ?: ВТОРАЯ ФОТОГРАФИЯ КАРТЫ
+  // ?: ТРЕТЬЯ ФОТОГРАФИЯ КАРТЫ
   thirdCardFileInput.addEventListener('change', function() {
     if (this.files && this.files[0]) {
       let filePath = thirdCardFileInput.value;
@@ -119,7 +172,20 @@ window.addEventListener('load', function() {
         return false;
       } else {
         img.onload = () => URL.revokeObjectURL(img.src);
-        img.src = URL.createObjectURL(this.files[0]); 
+        img.src = URL.createObjectURL(this.files[0]);
+        fetch('yourAPI', { // @: ваш POST
+          method: 'POST',
+          headers: {
+            "Content-Type": "First passport file"
+          },
+          body: img.src // @: наш файл
+        }).then (
+          response => response.json() // @: если ответ является объектом JSON
+        ).then (
+          success => console.log(success) // @: обработка объекта ответа на успешный процесс
+        ).catch (
+          error => console.log(error) // @: обработка объекта ответа на ошибку
+        );
       }
     }
   });
