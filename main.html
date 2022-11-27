@@ -22,7 +22,7 @@
           <!-- Блок ПЕРВОГО изображения паспорта -->
           <div class="wrapper_content_passport step-upload hidden" id="passport-step-one" data-step_id="1">
             <div class="wrapper_content_passport__img">
-              <img id="first_passport_img" src="/img/defPassport.00d012361a875d6dba1e.png" alt="pssport img">
+              <img class="upload_file_img" id="first_passport_img" src="/img/defPassport.00d012361a875d6dba1e.png" alt="pssport img">
             </div>
             <div class="wrapper_content_passport_info">
               <h5 style="font-weight: bold; padding-bottom: 30px;">Загрузите изображеие паспорта РФ</h5>
@@ -32,15 +32,17 @@
                 </li>
                 <li>Не закрывайте рукой данные в паспорте</li>
                 <li>Обязательно убедитесь, что на прикрепленном фото все записи хорошо читаются</li>
-              </ul><label for="first_passport_input">
+              </ul>
+              <label for="first_passport_input">
                 <div class="wrapper_content_passport_info__buttons">
                   <buttons class="btn btn-primary" style="display: flex; align-items: center; justify-content: center;"><span>Загрузить файл</span></buttons>
                 </div>
               </label>
               <input
                 type="file"
+                class="upload-photo hidden"
                 id="first_passport_input"
-                class="hidden"
+                data-uploud_id="1"
               >
               </p>
             </div>
@@ -48,7 +50,7 @@
           <!-- Блок ВТОРОГО изображения паспорта -->
           <div class="wrapper_content_passport step-upload hidden" id="passport-step-two" data-step_id="2">
             <div class="wrapper_content_passport__img">
-              <img id="second_passport_img" src="/img/defPassportReg.ce7cdcae6e61b7a7787c.png" alt="pssport img" >
+              <img class="upload_file_img" id="second_passport_img" src="/img/defPassportReg.ce7cdcae6e61b7a7787c.png" alt="pssport img" >
             </div>
             <div class="wrapper_content_passport_info">
               <h5 style="font-weight: bold; padding-bottom: 30px;">Загрузите изображение разворота регистрации
@@ -70,9 +72,10 @@
               </label>
               <input
                 type="file"
+                class="upload-photo hidden"
                 id="second_passport_input"
-                class="hidden"
                 accept=".jpg, .jpeg, .png"
+                data-uploud_id="2"
               >
             </div>
           </div>
@@ -81,7 +84,7 @@
             <!-- 1 карта -->
             <div class="first-card">
               <div class="wrapper_content_card__img">
-                <img id="first-card-img" src="/img/cardDef.a787e36b92a6a52eb373.png" alt="card img">
+                <img class="upload_file_img" id="first-card-img" src="/img/cardDef.a787e36b92a6a52eb373.png" alt="card img">
                 <label for="first-card-input" class="label_class">
                   <div class="wrapper_content_card__buttons">
                     <buttons class="btn btn-primary" style="display: flex; align-items: center; justify-content: center;"><span>Загрузить файл</span></buttons>
@@ -89,8 +92,9 @@
                 </label>
                 <input
                   type="file"
+                  class="upload-photo hidden"
                   id="first-card-input"
-                  class="hidden"
+                  data-uploud_id="3"
                 >
               </div>
               <div class="wrapper_content_card_info">
@@ -113,7 +117,7 @@
             <!-- 2 карта -->
             <div class="second-card hidden" id="card-new-sample">
               <div class="wrapper_content_card__img">
-                <img id="second-card-img" src="/img/cardFrontTF.b120550d1a26f66bc5dd.png" alt="card img">
+                <img class="upload_file_img" id="second-card-img" src="/img/cardFrontTF.b120550d1a26f66bc5dd.png" alt="card img">
                 <label for="second-card-input" class="label_class">
                 <div class="wrapper_content_card__buttons">
                   <buttons class="btn btn-primary"style="display: flex; align-items: center; justify-content: center;"><span>Загрузитьфайл</span></buttons>
@@ -121,8 +125,9 @@
               </label>
               <input
                 type="file"
+                class="upload-photo hidden"
                 id="second-card-input"
-                class="hidden"
+                data-uploud_id="4"
               >
             </div>
             <div class="wrapper_content_card_info">
@@ -141,7 +146,7 @@
             <!-- 3 карта -->
             <div class="third-card hidden" id="card-new-sample">
               <div class="wrapper_content_card__img">
-                <img id="third-card-img" src="/img/CardBackTF.8b9f61baf05de836a1d2.png" alt="card img">
+                <img class="upload_file_img" id="third-card-img" src="/img/CardBackTF.8b9f61baf05de836a1d2.png" alt="card img">
                 <label for="third-card-input" class="label_class">
                   <div class="wrapper_content_card__buttons">
                     <buttons class="btn btn-primary"style="display: flex; align-items: center; justify-content: center;"><span>Загрузитьфайл</span></buttons>
@@ -149,8 +154,9 @@
                 </label>
                 <input
                   type="file"
+                  class="upload-photo hidden"
                   id="third-card-input"
-                  class="hidden"
+                  data-uploud_id="5"
                 >
               </div>
               <div class="wrapper_content_card_info">
@@ -167,8 +173,22 @@
               </div>
             </div>
           </div>
+          <div class="wrapper_content_passport_error_window">
+            <div class="wrapper_content_passport_error_window_info">
+              <div class="wrapper_content_passport_error_window_info__img">
+                <img class="img" src="" alt="your png">
+              </div>
+              <div class="wrapper_content_passport_error_window_info__img-fullscrean hidden">
+                <img class="img" src="" alt="your png">
+              </div>
+              <div class="wrapper_content_passport_error_window_info__text">Загружаемое изображеие не подходит!</div>
+            </div>
+            <buttons class="wrapper_content_passport_error_window__btn btn btn-primary"><span>Хорошо</span></buttons>
+          </div>
+          <div class="photo-preloader-ring hidden">
+            <div class="photo-preloader-ring__lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
         </div>
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         <input class="hidden" name="formStatus">
       </form>
     </div>
