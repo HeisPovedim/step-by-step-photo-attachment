@@ -25139,7 +25139,6 @@ a:hover {
   position: absolute;
   background-color: #f6f7f9;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-grow:1;
   align-items: center;
@@ -25147,6 +25146,7 @@ a:hover {
   justify-content: space-between;
   border-radius: 5px;
   border: 1px solid red;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.5)
 }
 
 .wrapper_content_passport_error_window_info {
@@ -25162,7 +25162,6 @@ a:hover {
 .wrapper_content_passport_error_window_info__img {
   width: 300px;
   height: 99%;
-  background-color: #005cbf;
 }
 
 .wrapper_content_passport_error_window_info__img img {
